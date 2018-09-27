@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#mainContainer {
+    height: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+#board {
+    max-width: calc(100vw - 230px);
+    flex: 0 1 calc(100vw - 230px);
+    height: calc(95vh - 40px);
+    margin: 20px;
+    padding: 5px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.piece {
+    text-align: center;
+    /*max-width: 100px;*/
+    padding: 15px 5px;
+    background-color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+}
+
+.piece:hover{
+    min-width: 60px;
+    min-height: 170px;
+}
+
+.piece:hover .hoverMenu{
+    display: block;
+}
+
+/*Just the invisible container*/
+.hoverMenu {
+    display: none;
+    position: absolute;
+    background: white;
+    font-size: 10px;
+    color: black;
+    top: 5%;
+    left:5%;
+    width: 90%;
+    height: 90%;
+}
+
+/*The flex container*/
+.hoveMenuFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverMenuSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.hoverMenu label {
+    width: 30px;
+    flex: 0 0 30px;
+    margin: 3px 3px;
+}
+
+.hoverMenuInputButtonFlex {
+    max-width: 60px;
+    display: flex;
+}
+
+.hoverMenu #item-order {
+    flex: 1 0 50px;
+    width: 50px;
+    max-width: 50px;
+}
+
+.hoverMenu input {
+    flex: 1 0 60px;
+    width: 60px;
+    max-width: 60px;
+    box-sizing: border-box;
+}
+
+.verticalButtons {
+    width: 10px;
+    flex: 0 1 10px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.hoverMenu button {
+    height: 10px;
+    padding: 0;
+    font-size: 5px;
+    line-height: 2px;
+    text-align: center;
+}
+.hoverMenu button:hover {
+    background-color: lightgreen;
+}
+
+.align-self {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.align-self label {
+    margin: 3px;
+    cursor: pointer;
+}
+
+.align-self input:checked + label {
+    background: dimgrey;
+    color: white;
+}
+
+.align-self input[type="radio"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    visibility:hidden;
+}
+
+
+
+
+
+
+.menuSection {
+    margin: 3px 0;
+}
+
+#menu {
+    min-width: 160px;
+    flex: 0 0 160px;
+    height: calc(95vh - 40px);
+    font-size: 15px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#menu li {
+    margin: 4px;
+}
+
+#menu label {
+    padding: 1px;
+    cursor: pointer;
+}
+
+#menu input:checked ~ label {
+    background: dimgrey;
+    color: white;
+}
+
+#menu input[type="radio"] {
+    visibility:hidden;
+}
+
+#menu ul {
+    list-style-type: none;
+}
+
+@media (max-height: 828px){
+
+    #board {
+        max-width: calc(100vw - 360px);
+        flex-basis: calc(100vw - 360px);
+    }
+
+    #menu div:nth-child(3) {
+        flex-basis: 40%;
+    }
+
+    .menuSection {
+        flex-basis: 20%;
+    }
+}
+
+@media (max-width: 320px){
+    #menu h3{
+        font-size: 11px;
+    }
+    #menu {
+        font-size: 8px;
+    }
+
+    #menu li {
+        margin: 0px;
+    }
+
+    .menuSection {
+        margin: 0 0;
+    }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>flexbox</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <div id="board">
+        </div>
+        <div id="menu">
+            <div class="menuSection">
+                <h3>flex-direction</h3>
+                <ul id="flex-direction">
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-direction"
+                        id="direction-row" value="row" checked>
+                        <label for="direction-row">row</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-direction"
+                        id="direction-row-reverse" value="row-reverse" >
+                        <label for="direction-row-reverse">row-reverse</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-direction"
+                        id="direction-column" value="column">
+                        <label for="direction-column">column</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-direction"
+                        id="direction-column-reverse" value="column-reverse">
+                        <label for="direction-column-reverse">column-reverse</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuSection">
+                <h3>flex-wrap</h3>
+                <ul id="flex-wrap">
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-wrap"
+                        id="wrap-nowrap" value="nowrap" checked>
+                        <label for="wrap-nowrap">nowrap</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-wrap"
+                        id="wrap-wrap" value="wrap" >
+                        <label for="wrap-wrap">wrap</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="flex-wrap"
+                        id="wrap-wrap-reverse" value="wrap-reverse">
+                        <label for="wrap-wrap-reverse">wrap-reverse</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuSection">
+                <h3>justify-content</h3>
+                <ul id="justify-content">
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-flex-start" value="flex-start" checked>
+                        <label for="justify-flex-start">flex-start</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-flex-end" value="flex-end" >
+                        <label for="justify-flex-end">flex-end</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-center" value="center">
+                        <label for="justify-center">center</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-space-between" value="space-between">
+                        <label for="justify-space-between">space-between</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-space-around" value="space-around">
+                        <label for="justify-space-around">space-around</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="justify-content"
+                        id="justify-space-evenly" value="space-evenly">
+                        <label for="justify-space-evenly">space-evenly</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuSection">
+                <ul id="align-items">
+                    <h3>align-items</h3>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-items"
+                        id="align-items-flex-start" value="flex-start" checked>
+                        <label for="align-items-flex-start">flex-start</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-items"
+                        id="align-items-flex-end" value="flex-end" >
+                        <label for="align-items-flex-end">flex-end</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-items"
+                        id="align-items-center" value="center">
+                        <label for="align-items-center">center</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-items"
+                        id="align-items-baseline" value="baseline">
+                        <label for="align-items-baseline">baseline</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-items"
+                        id="align-items-stretch" value="stretch">
+                        <label for="align-items-stretch">stretch</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuSection">
+                <h3>align-content</h3>
+                <ul id="align-content">
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-flex-start" value="flex-start" checked>
+                        <label for="align-content-flex-start">flex-start</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-flex-end" value="flex-end" >
+                        <label for="align-content-flex-end">flex-end</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-center" value="center">
+                        <label for="align-content-center">center</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-space-between" value="space-between">
+                        <label for="align-content-space-between">space-between</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-space-around" value="space-around">
+                        <label for="align-content-space-around">space-around</label>
+                    </li>
+                    <li>
+                        <input type="radio" onchange="radioClick(this)" name ="align-content"
+                        id="align-content-stretch" value="stretch">
+                        <label for="align-content-stretch">stretch</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="menuSection">
+                <label for="numberOfPieces"><h3>Count</h3></label>
+                <input type="range" min="1" max="20" value ="3" id="countRange" onInput="refreshCount()">
+            </div>
+        </div> <!-- menu -->
+    </div> <!-- mainContainer -->
+    <div id="hoverTemplate" class="hoverMenu">
+        <div class="hoveMenuFlex">
+
+            <div class="hoverMenuSection">
+                <label for="order">order</label>
+                <div class="hoverMenuInputButtonFlex">
+                    <input type="text" onchange="updatePiece(this)" name ="order"
+                    id="order" value="0">
+                    <div class="hoverMenuButtons verticalButtons">
+                        <button type="button" name="button">+</button>
+                        <button type="button" name="button">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hoverMenuSection">
+                <label for="flex">flex</label>
+                <input type="text" onchange="updatePiece(this)" name ="flex"
+                id="flex" value="0 1 auto">
+            </div>
+
+            <div class="hoverMenuSection">
+                <div class="align-self">
+                    <h3>align-self</h3>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-auto" value="auto" checked>
+                        <label for="align-self-auto">auto</label>
+                    </div>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-flex-start" value="flex-start">
+                        <label for="align-self-flex-start">flex-start</label>
+                    </div>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-flex-end" value="flex-end" >
+                        <label for="align-self-flex-end">flex-end</label>
+                    </div>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-center" value="center">
+                        <label for="align-self-center">center</label>
+                    </div>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-baseline" value="baseline">
+                        <label for="align-self-baseline">baseline</label>
+                    </div>
+                    <div>
+                        <input type="radio" onchange="updatePiece(this)" name ="align-self"
+                        id="align-self-stretch" value="stretch">
+                        <label for="align-self-stretch">stretch</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
